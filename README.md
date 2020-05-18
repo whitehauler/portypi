@@ -1,5 +1,7 @@
 # portypi
+
 The first step in hacking is information gathering
+
 portscanner written in python easy to use.(Also compatible with termux,linux,windows and etc.,)
 
 
