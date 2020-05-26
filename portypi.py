@@ -1,6 +1,7 @@
 try:
     import os
     import time
+    from socket import *
     #os.system('pip install python-nmap')
     os.system('clear')
     os.system('figlet PortyPi| lolcat -a -p 4 -F 0.5 -d 5')
@@ -36,12 +37,25 @@ try:
         usr=input('Enter the option : ')
         print()
         if usr=='1':
-            IP=input('enter the ip you want to scan : ')
-            if  IP=='exit':
-                stp()
-            else:    
-                ns.scan(IP,'1-65535','-v --version-all')
-                print('The opened ports are : ',ns[IP]['tcp'].keys())
+            starttime=time.time()
+
+            if __name__=='__main__':
+                target=input('enter the host : ')
+                print()
+                print()
+                t_ip=gethostbyname(target)
+                print('starting scan : ',t_ip)
+
+                for i in range(50,500):
+                    s = socket(AF_INET,SOCK_STREAM)
+
+                    conn=s.connect_ex((t_ip,i))
+                    if (conn==0):
+                        print('port %d:OPEN'%(i,))
+                    s.close()
+            print()
+            print('time taken: ',time.time()-starttime)
+            print()
             
         elif usr=='2':
             while True:
