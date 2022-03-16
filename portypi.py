@@ -1,12 +1,9 @@
-try:
-    import os
-    import time
-    from socket import *
-    #os.system('pip install python-nmap')
-    os.system('clear')
-    os.system('figlet PortyPi| lolcat -a -p 4 -F 0.5 -d 5')
+import os
+import time
+import nmap
+from socket import *
 
-    import nmap
+try:
     def stp():
         os.system('clear')
         os.system('figlet fuck You | lolcat -a -d 5 -F 1')
@@ -25,8 +22,10 @@ try:
         else:
             stp()
     while True:
-        
-        print('PORT Scanner in python\n \nSelect from the options you have.\nType "exit" when you want to stop')
+
+        print('''PORT Scanner in python\n
+        Select from the options you have.\n
+        Type "exit" when you want to stop''')
         print()
         print('1.show all opened ports')
         print('2.find a specific port')
@@ -56,7 +55,7 @@ try:
             print()
             print('time taken: ',time.time()-starttime)
             print()
-            
+
         elif usr=='2':
             while True:
                 print()
@@ -87,7 +86,7 @@ try:
             IP=input('Enter the host ip you want to check : ')
             if IP=='exit':
                 stp()
-            else:    
+            else:
                 port='1-65535'
                 ns.scan(IP,port,'-v --version-all')
                 print(ns[IP].state() )
@@ -101,8 +100,8 @@ try:
             print('please try valid input')
             print()
             cont()
-except ModuleNotFoundError:
-    print('ERROR OCCURED!!!!!')
+except ModuleNotFoundError as err:
+    print('ERROR OCCURED!!!!!' + str(e))
     print()
     print('REQUIREMENTS:\n*INSTALL python \n*INSTALL os pip package\n*INSTALL FIGLET \n*INSTALL python-nmap(pip) ')
     print()
@@ -136,5 +135,3 @@ except AssertionError:
     print()
     print('Keep in Mind while Typing bitch')
     tryag()
-
-    
