@@ -103,7 +103,8 @@ try:
 except ModuleNotFoundError as err:
     print('ERROR OCCURED!!!!!' + str(e))
     print()
-    print('REQUIREMENTS:\n*INSTALL python \n*INSTALL os pip package\n*INSTALL FIGLET \n*INSTALL python-nmap(pip) ')
+    print("""REQUIREMENTS:\n* install python \
+        *INSTALL os pip package\n*INSTALL FIGLET \n*INSTALL python-nmap(pip) """)
     print()
     print('1.LINUX(debian)\n2.TERMUX(experimental)\n\n')
     print('While installing if you face any ERRORS! just Run "support.py" file.1\nif it not automated')
