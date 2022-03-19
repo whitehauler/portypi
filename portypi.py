@@ -5,7 +5,6 @@ import socket
 ports = [ i for i in range(100) ]
 
 # Open Ports
-
 ports_open = []
 
 
@@ -17,16 +16,16 @@ except socket.gaierror:
 
 for port in ports:
     try:
-        try:
-            conn = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            conn.settimeout(2.0)
-        except socket.error as err:
-            print("Error Creating socket")
-        print("Trying " + str(port))
+        conn = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        conn.settimeout(1320)
+        print("Port " + str(port))
         if conn.connect((host_ip, port)):
+            print(port)
             ports_open.append(port)
-            socket.close()
-    except Exception as os_err:
-        print("Try Bind to Gateway IP \n" + str(os_err) )
+    except socket.error as err:
+        print("Error Creating socket")
+    except ConnectionRefusedError:
+        continue
+    conn.close()
 
 print(ports_open)
