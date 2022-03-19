@@ -1,16 +1,14 @@
-## portypi
+# Portypi
 
-The first step in hacking is information gathering
+A Basic Recon or information gathering Tool written in python
 
-portscanner written in python easy to use.(Also compatible with termux,linux,windows and etc.,)
+### Basic Requirements:
 
-
-## Basic Requirements:
 1. Linux
 2. python-nmap
 
 
-# USER GUIDE:
+### USER GUIDE:
 
 1. Clone from https://github.com/whitehauler/portypi.git
 
