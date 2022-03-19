@@ -2,13 +2,13 @@
 
 A Basic Recon or information gathering Tool written in python
 
-### Basic Requirements:
+### Basic Requirements
 
 1. Linux
 2. python-nmap
 
 
-### USER GUIDE:
+### Usage 
 
 1. Clone from https://github.com/whitehauler/portypi.git
 
