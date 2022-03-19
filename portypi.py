@@ -1,12 +1,6 @@
 from sys import argv, exit
 import socket
 
-try:
-    conn = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    conn.settimeout(2.0)
-except socket.error as err:
-    print("Error Creating socket")
-
 # Ports to scan
 ports = [ i for i in range(100) ]
 
@@ -23,8 +17,12 @@ except socket.gaierror:
 
 for port in ports:
     try:
+        try:
+            conn = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            conn.settimeout(2.0)
+        except socket.error as err:
+            print("Error Creating socket")
         print("Trying " + str(port))
-
         if conn.connect((host_ip, port)):
             ports_open.append(port)
             socket.close()
